@@ -77,11 +77,14 @@ WSGI_APPLICATION = 'editora.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgresql://exemplo_livro_l25z_user:DmAB8pT6x899b9A7eEmIohZymqCt1ZKc@dpg-cv9c73a3esus73e1hnlg-a.oregon-postgres.render.com/exemplo_livro_l25z',
-        conn_max_age=600,
-        ssl_require=not DEBUG
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'getit',
+        'USER': 'getituser',
+        'PASSWORD': 'getitsenha',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
 
 
